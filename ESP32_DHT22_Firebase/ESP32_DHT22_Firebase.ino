@@ -1,5 +1,4 @@
 #include <NTPClient.h>
-
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 #include "DHTesp.h"
@@ -11,10 +10,10 @@ int dhtPin = 17;
 int UPLOAD_DATA_INTERVAL = 60000;
 
 // Wifi & firebase
-#define FIREBASE_HOST "beer-temp.firebaseio.com" //Do not include https:// in FIREBASE_HOST
-#define FIREBASE_AUTH "ekPXAlciq4N2m3o6yUMNiNzx8xUoNrG0uKC6xiIH"
-#define WIFI_SSID "PasChezLui"
-#define WIFI_PASSWORD "DNuqMTpZyzpGfccgE4"
+#define FIREBASE_HOST "FIREBASE_HOST" //Do not include https:// in FIREBASE_HOST
+#define FIREBASE_AUTH "FIREBASE_AUTH"
+#define WIFI_SSID "WIFI_SSID"
+#define WIFI_PASSWORD "WIFI_PASSWORD"
 FirebaseData firebaseData;
 FirebaseJson json;
 String databasePath = "/Temps";
