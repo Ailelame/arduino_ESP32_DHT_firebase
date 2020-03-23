@@ -17,6 +17,7 @@ int UPLOAD_DATA_INTERVAL = 60000;
 FirebaseData firebaseData;
 FirebaseJson json;
 String databasePath = "/Temps";
+String sensorId = "Cave à bière"; // Id of the sensor for Firbase 
 
 // Sync NTC
 WiFiUDP ntpUDP;
@@ -82,7 +83,8 @@ void saveData(TempAndHumidity newValues) {
   Serial.println("------------------------------------");
   Serial.println("Preparing push firebase");
   json.clear().add("temperatureInCelcius" , String(newValues.temperature));
-  json.add("Humidity", String(newValues.humidity));
+  json.add("sensorId", sensorId); 
+  json.add("humidity", String(newValues.humidity));
 
   timeClient.update();
   long date = timeClient.getEpochTime();
